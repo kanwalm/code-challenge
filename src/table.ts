@@ -26,8 +26,8 @@ export class Table {
           column < this.length - ringIndex;
           column++
         ) {
-          const a = this.handleOddLengthLastRing({ row, column, ringIndex });
-          if (a) return this.shiftedMatrix;
+          const lastRing = this.handleOddLengthLastRing({ row, column, ringIndex });
+          if (lastRing) return this.shiftedMatrix;
           this.shiftTopRowLeft({ row, column, ringIndex });
           this.shiftLeftColumnDown({ row, column, ringIndex });
           this.shiftBottomRowRight({ row, column, ringIndex });
