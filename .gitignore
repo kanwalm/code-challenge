@@ -1,0 +1,6 @@
+.idea
+*.log
+*.js
+*.js.map
+node_modules
+coverage

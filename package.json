@@ -1,0 +1,35 @@
+{
+  "name": "code-challenge",
+  "version": "1.0.0",
+  "main": "src/cli.js",
+  "license": "MIT",
+  "scripts": {
+    "build:clean": "tsc --build --clean",
+    "start:dev": "yarn build:clean && ts-node-dev --respawn --transpile-only --watch src src/cli.ts input.csv",
+    "start": "tsc -p . && cd src && node cli.js input.csv > output.csv",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "csv-stream": "^0.2.0",
+    "fast-csv": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.10",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "2.8.7",
+    "ts-jest": "^29.0.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
